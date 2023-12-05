@@ -22,10 +22,11 @@ print(aluno.get('endereço'))  #Rua Santo Antônio de Pádua
 print(aluno.get('telefone'))  #None
 print(aluno.get('telefone', 'Não existe'))  #Não existe
 
+del aluno['endereço']
 del aluno['numero']
 print(
     aluno
-)  #{'nome': 'Samara Santos', 'idade': 22, 'aprovado': True, 'endereço': 'Rua Santo Antônio de Pádua'}
+)  #{'nome': 'Samara Santos', 'idade': 22, 'aprovado': True}
 
 print(len(aluno)) #4
 print('-------------------------------------')
@@ -46,4 +47,12 @@ print('*******************************')
 for keys, values in aluno.items():
   print(f'{keys} : {values}')
 # print das keys e values
+print('-------------------------------------')
+
+print('com listas')
+aluno.update({'materias': ['Português', 'Matemática', 'Geografia']})
+print(aluno) #{'nome': 'Samara Santos', 'idade': 22, 'aprovado': True, 'materias': ['Português', 'Matemática', 'Geografia']}
+print(aluno.items()) #dict_items([('nome', 'Samara Santos'), ('idade', 22), ('aprovado', True), ('materias', ['Português', 'Matemática', 'Geografia'])])
+print(aluno.keys()) #dict_keys(['nome', 'idade', 'aprovado', 'materias'])
+print(aluno.values()) #dict_values(['Samara Santos', 22, True, ['Português', 'Matemática', 'Geografia']])
 print('-------------------------------------')
